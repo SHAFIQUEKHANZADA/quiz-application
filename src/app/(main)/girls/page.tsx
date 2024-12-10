@@ -5,7 +5,7 @@ import React from 'react'
 
 const GirlPage = () => {
     return (
-        <div className="flex flex-col items-center justify-start text-center gap-8">
+        <div className="flex flex-col items-center justify-start text-center gap-8 max-w-[400px] mx-auto">
 
             <div className="space-y-1">
                 <h1 className="text-[30px] font-bold">AI-DRIVEN INCOME GROWTH CHALLENGE</h1>

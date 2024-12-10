@@ -1,14 +1,13 @@
 import { Heebo } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 import { RiDoubleQuotesL, RiDoubleQuotesR } from 'react-icons/ri'
 
 const heboo = Heebo({ subsets: ["latin"], weight: "600" })
 
 const SocalProof = () => {
     return (
-        <div className={`${heboo.className} py-2`}>
+        <div className={`${heboo.className} py-2 max-w-[400px] mx-auto`}>
             <div className='bg-[#EEEEFF] rounded-lg p-6 h-full flex flex-col gap-4'>
                 <div className='text-center'>
                     <h1 className='text-[#5653FE] text-[34px] font-bold'>100 000+ people</h1>
