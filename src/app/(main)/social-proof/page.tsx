@@ -23,7 +23,7 @@ const SocalProof = () => {
                         <Image src={"/images/hv.webp"} alt='harved' width={120} height={120} />
 
                         <RiDoubleQuotesL className='absolute top-2 left-2 text-[19px] text-[#5653FE]' />
-                        <RiDoubleQuotesR className='absolute bottom-16 right-3 text-[19px] text-[#5653FE]' />
+                        <RiDoubleQuotesR className='absolute sm:bottom-16 bottom-14 right-3 text-[19px] text-[#5653FE]' />
                     </div>
 
                     <div className='flex flex-col text-center'>

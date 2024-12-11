@@ -1,29 +1,36 @@
 "use client";
 import { useState } from "react";
+// import { useRouter } from "next/router";
 import { ArrowLeft } from "lucide-react";
 import { questions } from "@/components/Questions";
 import Image from "next/image";
 import Link from "next/link";
 import { FaCheck } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 const Quiz = () => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [selectedOptionIndex, setSelectedOptionIndex] = useState<number | null>(null);
+    const router = useRouter(); // Initialize useRouter
 
     const handleOptionClick = (index: number) => {
         setSelectedOptionIndex(index);
+
         setTimeout(() => {
-            if (currentQuestionIndex < questions.length - 1) {
+            if (currentQuestionIndex === questions.length - 1) {
+                // Redirect to magic-page if it's the last question
+                router.push("/personal-plan");
+            } else {
                 setCurrentQuestionIndex(currentQuestionIndex + 1);
-                setSelectedOptionIndex(null);  
+                setSelectedOptionIndex(null);
             }
-        }, 500);
+        }, 0);
     };
 
     const handleBackClick = () => {
         if (currentQuestionIndex > 0) {
             setCurrentQuestionIndex(currentQuestionIndex - 1);
-            setSelectedOptionIndex(null);  
+            setSelectedOptionIndex(null);
         }
     };
 
@@ -76,7 +83,6 @@ const Quiz = () => {
                             {questions[currentQuestionIndex].paragraph}
                         </p>
                     </div>
-                    
 
                     {/* Options with Images */}
                     <div className="mt-6 grid grid-cols-1 gap-4">
@@ -89,15 +95,15 @@ const Quiz = () => {
                                     }`}
                                 onClick={() => handleOptionClick(index)}
                             >
-                              <div className="h-[100px] w-[100px] flex justify-center items-center">
-                              <Image
-                                    src={option.image}
-                                    alt={option.text}
-                                    width={100}
-                                    height={100}
-                                    className="rounded-md h-[70px] w-[70px] overflow-hidden object-cover object-top"
-                                />
-                              </div>
+                                <div className="h-[100px] w-[100px] flex justify-center items-center">
+                                    <Image
+                                        src={option.image}
+                                        alt={option.text}
+                                        width={100}
+                                        height={100}
+                                        className="rounded-md h-[70px] w-[70px] overflow-hidden object-cover object-top"
+                                    />
+                                </div>
 
                                 <span className="text-[18px] font-bold">{option.text}</span>
                                 {/* Tick Mark */}
@@ -105,7 +111,6 @@ const Quiz = () => {
                                     <div className="absolute right-4 bg-[#5653FE] rounded-full h-5 w-5 p-1 flex justify-center items-center">
                                         <FaCheck className="text-white text-[10px]" />
                                     </div>
-
                                 )}
                             </div>
                         ))}
