@@ -12,11 +12,10 @@ const Quiz = () => {
 
     const handleOptionClick = (index: number) => {
         setSelectedOptionIndex(index);
-        // Optional: Navigate to the next question after a delay
         setTimeout(() => {
             if (currentQuestionIndex < questions.length - 1) {
                 setCurrentQuestionIndex(currentQuestionIndex + 1);
-                setSelectedOptionIndex(null); // Reset selection for the next question
+                setSelectedOptionIndex(null);  
             }
         }, 500);
     };
@@ -24,7 +23,7 @@ const Quiz = () => {
     const handleBackClick = () => {
         if (currentQuestionIndex > 0) {
             setCurrentQuestionIndex(currentQuestionIndex - 1);
-            setSelectedOptionIndex(null); // Reset selection for the previous question
+            setSelectedOptionIndex(null);  
         }
     };
 
@@ -43,14 +42,14 @@ const Quiz = () => {
                 </div>
 
                 <Link href={"/"}>
-                    <div className="flex items-center justify-center mr-10">
+                    <div className="flex items-center justify-center">
                         <Image src="/images/logo.svg" alt="logo" width={100} height={100} />
                     </div>
                 </Link>
 
                 {/* Top Right Counter */}
                 <div className="text-[14px] font-semibold text-gray-700">
-                    {currentQuestionIndex + 1}/{questions.length}
+                    {currentQuestionIndex + 1} / {questions.length}
                 </div>
             </div>
 
@@ -68,30 +67,35 @@ const Quiz = () => {
                     </div>
 
                     {/* Current Question */}
-                    <div className="mt-6 text-center">
+                    <div className="mt-6 text-center space-y-1">
                         <h2 className="text-[24px] font-bold text-[#24234C]">
                             {questions[currentQuestionIndex].question}
                         </h2>
+
+                        <p className="text-[17px] font-medium text-[#6B728C]">
+                            {questions[currentQuestionIndex].paragraph}
+                        </p>
                     </div>
+                    
 
                     {/* Options with Images */}
                     <div className="mt-6 grid grid-cols-1 gap-4">
                         {questions[currentQuestionIndex].options.map((option, index: number) => (
                             <div
                                 key={index}
-                                className={`relative flex items-center gap-4 pt-2 rounded-lg cursor-pointer ${selectedOptionIndex === index
-                                    ? "border border-[#5653FE] bg-[#E6F8E6]"
+                                className={`relative flex items-center gap-4 p-2 pr-10 rounded-lg cursor-pointer ${selectedOptionIndex === index
+                                    ? "border border-[#5653FE] bg-[#F5F5F5]"
                                     : "bg-[#F5F5F5]"
                                     }`}
                                 onClick={() => handleOptionClick(index)}
                             >
-                              <div className="h-[100px] flex justify-center items-center">
+                              <div className="h-[100px] w-[100px] flex justify-center items-center">
                               <Image
                                     src={option.image}
                                     alt={option.text}
                                     width={100}
                                     height={100}
-                                    className="rounded-md h-[80px] w-[80px] overflow-hidden object-cover object-top"
+                                    className="rounded-md h-[70px] w-[70px] overflow-hidden object-cover object-top"
                                 />
                               </div>
 

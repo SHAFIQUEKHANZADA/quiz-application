@@ -18,13 +18,13 @@ const Nav = () => {
       {/* Navbar Header */}
       <div className="flex items-center justify-end gap-16 py-3 bg-white  ">
         {/* Logo Centered */}
-        <div className="flex items-center justify-center mr-10">
+        <div className="flex items-center justify-center md:mr-[35px] mr-[6.7vw]">
           <Image src="/images/logo.svg" alt="logo" width={100} height={100} />
         </div>
 
         {/* Menu Button */}
         <button onClick={toggleMenu} className="text-gray-800">
-          <HiMenu className="w-8 h-6 font-bold" />
+          <HiMenu className="w-[30px] h-[30px] font-bold" />
         </button>
       </div>
 
