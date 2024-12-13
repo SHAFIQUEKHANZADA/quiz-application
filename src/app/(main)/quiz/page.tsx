@@ -56,7 +56,8 @@ const Quiz = () => {
 
                 {/* Top Right Counter */}
                 <div className="text-[14px] font-semibold text-gray-700">
-                    {currentQuestionIndex + 1} / {questions.length}
+                    <span className="text-[#5653FE]">{currentQuestionIndex + 1} </span>
+                     / {questions.length}
                 </div>
             </div>
 
@@ -89,21 +90,26 @@ const Quiz = () => {
                         {questions[currentQuestionIndex].options.map((option, index: number) => (
                             <div
                                 key={index}
-                                className={`relative flex items-center gap-4 p-2 pr-10 rounded-lg cursor-pointer ${selectedOptionIndex === index
+                                className={`relative flex items-center gap-4 p-2 h-[100px] pr-10 rounded-lg cursor-pointer ${selectedOptionIndex === index
                                     ? "border border-[#5653FE] bg-[#F5F5F5]"
                                     : "bg-[#F5F5F5]"
                                     }`}
                                 onClick={() => handleOptionClick(index)}
                             >
-                                <div className="h-[100px] w-[100px] flex justify-center items-center">
-                                    <Image
-                                        src={option.image}
-                                        alt={option.text}
-                                        width={100}
-                                        height={100}
-                                        className="rounded-md h-[70px] w-[70px] overflow-hidden object-cover object-top"
-                                    />
-                                </div>
+                                {option.image ? (
+                                    <div className="h-[100px] w-[100px] flex justify-center items-center">
+                                        <Image
+                                            src={option.image}
+                                            alt={option.text}
+                                            width={100}
+                                            height={100}
+                                            className="rounded-md h-[70px] w-[70px] overflow-hidden object-cover object-top"
+                                        />
+                                    </div>
+                                ) : (
+                                    <span className="text-[18px] font-bold"></span>
+                                )}
+
 
                                 <span className="text-[18px] font-bold">{option.text}</span>
                                 {/* Tick Mark */}

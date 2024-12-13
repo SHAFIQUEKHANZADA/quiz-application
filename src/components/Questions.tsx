@@ -1,6 +1,6 @@
 type Option = {
   text: string;
-  image: string;
+  image?: string;
 };
 
 type Question = {
@@ -67,12 +67,11 @@ export const questions: Question[] = [
   },
   {
     id: 6,
-    question: "Which planet is known as the Red Planet?",
+    question: "What annual income level do you want to achieve?",
     options: [
-      { text: "A) Earth", image: "/images/earth.jpg" },
-      { text: "B) Mars", image: "/images/mars.jpg" },
-      { text: "C) Jupiter", image: "/images/jupiter.jpg" },
-      { text: "D) Saturn", image: "/images/saturn.jpg" },
+      { text: "$30,000 - $50,000", image: "/images/m1.png" },
+      { text: "$50,000 - $100,000", image: "/images/m2.png" },
+      { text: "More than $100,000", image: "/images/bg1.png" },
     ],
   },
   {
@@ -86,12 +85,12 @@ export const questions: Question[] = [
   },
   {
     id: 8,
-    question: "Which planet is known as the Red Planet?",
+    question: "Would you enjoy a job where something else does the routine work for you?",
     options: [
-      { text: "A) Earth", image: "/images/earth.jpg" },
-      { text: "B) Mars", image: "/images/mars.jpg" },
-      { text: "C) Jupiter", image: "/images/jupiter.jpg" },
-      { text: "D) Saturn", image: "/images/saturn.jpg" },
+      { text: "Its's a dream" },
+      { text: "Somewhat" },
+      { text: "Maybe"  },
+      { text: "Not necessarily"  },
     ],
   },
   {
@@ -106,12 +105,12 @@ export const questions: Question[] = [
   },
   {
     id: 10,
-    question: "Which planet is known as the Red Planet?",
+    question: "Would you enjoy a job that matches your interests?",
     options: [
-      { text: "A) Earth", image: "/images/earth.jpg" },
-      { text: "B) Mars", image: "/images/mars.jpg" },
-      { text: "C) Jupiter", image: "/images/jupiter.jpg" },
-      { text: "D) Saturn", image: "/images/saturn.jpg" },
+      { text: "Absolutely"},
+      { text: "Somewhat"},
+      { text: "Maybe"},
+      { text: "Not necessarily" },
     ],
   },
   {
@@ -248,12 +247,12 @@ export const questions: Question[] = [
   },
   {
     id: 23,
-    question: "Which planet is known as the Red Planet?",
+    question: "How much time are you ready to spend to achieve your goal?",
     options: [
-      { text: "A) Earth", image: "/images/earth.jpg" },
-      { text: "B) Mars", image: "/images/mars.jpg" },
-      { text: "C) Jupiter", image: "/images/jupiter.jpg" },
-      { text: "D) Saturn", image: "/images/saturn.jpg" },
+      { text: "5 min/day"},
+      { text: "10 min/day"},
+      { text: "15 min/day"},
+      { text: "20 min/day"},
     ],
   },
 ];

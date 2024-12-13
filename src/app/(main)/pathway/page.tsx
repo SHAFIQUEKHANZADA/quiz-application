@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/chart"
 import Nav from "@/components/nav"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 const chartData = [
     { month: "Week 1", desktop: 20, mobile: 80 },
     { month: "Week 2", desktop: 200, mobile: 200 },
@@ -35,6 +36,11 @@ const chartConfig = {
 } satisfies ChartConfig
 
 export default function Component() {
+    const router = useRouter();  
+
+    const handleContinueClick = () => {
+        router.push("/selling-page");
+    };
     return (
         <div className="flex flex-col gap-10">
             <Nav />
@@ -95,14 +101,14 @@ export default function Component() {
             <div className="space-y-5 flex flex-col gap-4">
                 <h1 className="text-[24px] font-bold">Your 4-week AI-Driven Income Growth Challenge is ready!</h1>
 
-                <Link href={"/selling-page"}>
+                
                     <button
+                        onClick={handleContinueClick}
                         type="submit"
                         className="mt-4 w-full py-4 text-[16px] bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-300"
                     >
                         CONTINUE
                     </button>
-                </Link>
             </div>
         </div>
     )
