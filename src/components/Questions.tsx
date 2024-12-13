@@ -224,25 +224,27 @@ export const questions: Question[] = [
       { text: "No I frequently procrastinate", image: "/images/q16o4.png" },
     ],
   },
-  {
-    id: 21,
-    question: "Which planet is known as the Red Planet?",
-    options: [
-      { text: "Yes, I can easily stay focused", image: "/images/earth.jpg" },
-      { text: "Mostly, but I sometimes get distracted", image: "/images/mars.jpg" },
-      { text: "I often struggle", image: "/images/jupiter.jpg" },
-      { text: "No I frequently procrastinate", image: "/images/saturn.jpg" },
-    ],
-  },
+  // {
+  //   id: 21,
+  //   question: "Which planet is known as the Red Planet?",
+  //   options: [
+  //     { text: "Yes, I can easily stay focused", image: "/images/earth.jpg" },
+  //     { text: "Mostly, but I sometimes get distracted", image: "/images/mars.jpg" },
+  //     { text: "I often struggle", image: "/images/jupiter.jpg" },
+  //     { text: "No I frequently procrastinate", image: "/images/saturn.jpg" },
+  //   ],
+  // },
   {
     id: 22,
     question: "Is there something special you wish to achieve?",
     paragraph: "You’re more likely to reach your goal if you have something important to aim for",
     options: [
-      { text: "Buy a house", image: "/images/earth.jpg" },
-      { text: "A perfect wedding", image: "/images/mars.jpg" },
-      { text: "C) Jupiter", image: "/images/jupiter.jpg" },
-      { text: "D) Saturn", image: "/images/saturn.jpg" },
+      { text: "Buy a house", image: "/images/q2201.png" },
+      { text: "A perfect wedding", image: "/images/q22o2.png" },
+      { text: "Vacation", image: "/images/q22o3.png" },
+      { text: "Buy a car", image: "/images/q22o4.png" },
+      { text: "Worry-free retirement", image: "/images/q22o5.png" },
+      { text: "Other", image: "/images/q22o6.png" },
     ],
   },
   {

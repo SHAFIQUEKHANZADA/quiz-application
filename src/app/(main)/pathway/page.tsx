@@ -15,7 +15,6 @@ import {
     ChartTooltipContent,
 } from "@/components/ui/chart"
 import Nav from "@/components/nav"
-import Link from "next/link"
 import { useRouter } from "next/navigation"
 const chartData = [
     { month: "Week 1", desktop: 20, mobile: 80 },

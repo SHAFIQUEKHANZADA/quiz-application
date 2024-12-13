@@ -39,7 +39,7 @@ const DiscountSection = () => {
 
     return (
         <div className={`${hebbo.className}`}>
-            <div className="fixed top-0 left-1/2 transform -translate-x-1/2 w-[360px] z-10 bg-white">
+            <div className="fixed top-0 left-1/2 transform -translate-x-1/2 sm:w-[360px] w-full sm:px-0 px-4 z-10 bg-white">
             <div className="flex justify-between items-center py-2">
                 {isExpired ? (
                     // Show the image when the countdown expires
@@ -59,7 +59,7 @@ const DiscountSection = () => {
                             <h2 className="text-[12px] font-bold text-gray-800">
                                 Discount expires in
                             </h2>
-                            <div className="flex items-center space-x-2 text-3xl font-semibold text-red-600">
+                            <div className="flex items-center space-x-2 text-3xl font-semibold">
                                 <span>{String(time.minutes).padStart(2, "0")}</span>
                                 <span>:</span>
                                 <span>{String(time.seconds).padStart(2, "0")}</span>
@@ -161,7 +161,7 @@ const DiscountSection = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col items-center py-10 gap-3 px-4 text-[20px]">
+            <div className="flex flex-col items-center py-10 gap-3 text-[20px]">
                 <h1 className="text-[24px] font-bold">Try Coursiv and you will:</h1>
                 <div className="flex flex-col gap-4">
                     <div className="flex items-center gap-2">
@@ -287,7 +287,7 @@ const DiscountSection = () => {
                     <p className="text-[12px] text-gray-600 ml-5">*According to a research by Coursiv, 2023</p>
                 </div>
 
-                <div className="flex w-full justify-center items-center py-4">
+                <div className="flex sm:w-full w-[80%] mx-auto justify-center items-center py-4 z-0">
                     <button className="px-[35px] py-[14px] w-full  bg-blue-500 text-white text-[16px] font-semibold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300 zoom-fly-button">
                         GET MY PLAN
                     </button>
@@ -314,8 +314,8 @@ const DiscountSection = () => {
                     <p className="text-[14px]">Learn more about all the conditions in our <br /> <span className="underline">Subscription Terms.</span></p>
                 </div>
 
-                <div>
-                    <h1>Access Coursiv anywhere using your mobile device</h1>
+                <div className="text-center flex flex-col gap-4 py-8">
+                    <h1 className="text-[24px] font-bold py-3">Access Coursiv anywhere using your mobile device</h1>
                     <Carousel />
                 </div>
 
@@ -357,7 +357,7 @@ const DiscountSection = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col justify-center text-center gap-5">
+            <div className="flex flex-col justify-center text-center gap-5 pb-10">
                 <h1 className="text-[24px] font-bold">People love Coursiv</h1>
 
                 <div className="flex flex-col gap-4 text-start">
