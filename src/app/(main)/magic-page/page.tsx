@@ -4,13 +4,24 @@ import { motion, AnimatePresence } from "framer-motion";
 import "tailwindcss/tailwind.css";
 import { useRouter } from "next/navigation";
 import Nav from "@/components/nav";
+import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 
 const MagicPage = () => {
     const [progress, setProgress] = useState(0);
     const [currentCard, setCurrentCard] = useState(0);
     const router = useRouter();
 
-    const cards = ["Card 1", "Card 2", "Card 3", "Card 4"];
+    const cards = [
+        { author: "Tina", title: " Outstanding platform", description: "“Coursiv enables individuals at all levels of expertise to easily understand complicated AI topics.”" },
+        { author: "Jeremy", title: "The experience is topnotch", description: "“The AI knowledge I've gained from the program can be immediately applied in my job. I've acquired skills that enhance my efficiency and effectiveness at work.”" },
+        { author: "  Hyun", title: "Extensive knowledge", description: "“In addition to AI insights, Coursiv offered me extensive marketing knowledge. It's less about the cost and more about the val" },
+    ];
+
+
+
+
+
+
 
     // Increment the progress bar
     useEffect(() => {
@@ -22,7 +33,7 @@ const MagicPage = () => {
         } else {
             setTimeout(() => {
                 router.push("/email");
-            }, 500);
+            }, 100);
         }
     }, [progress, router]);
 
@@ -78,17 +89,31 @@ const MagicPage = () => {
                 </div>
 
                 {/* Carousel Section */}
-                <div className="overflow-hidden w-full h-36 mt-10">
+                <div className="overflow-hidden w-full h-fit mt-10 p-2">
                     <AnimatePresence>
                         <motion.div
                             key={currentCard}
-                            className="flex items-center justify-center w-full h-full bg-blue-500 text-white rounded-lg shadow-md"
+                            className="flex flex-col justify-center gap-3 text-start w-full h-fit text-black rounded-lg shadow-lg p-4"
                             initial={{ opacity: 0, x: 50 }}
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: -50 }}
                             transition={{ duration: 0.2 }}
                         >
-                            {cards[currentCard]}
+                            <div className="flex items-center gap-1">
+                                <div className="bg-[#219653] p-1"><FaStar className="text-[#F1F1F1]" /></div>
+                                <div className="bg-[#219653] p-1"><FaStar className="text-[#F1F1F1]" /></div>
+                                <div className="bg-[#219653] p-1"><FaStar className="text-[#F1F1F1]" /></div>
+                                <div className="bg-[#219653] p-1"><FaStar className="text-[#F1F1F1]" /></div>
+                                <div className="bg-[#219653] p-1"><FaStarHalfAlt className="text-[#F1F1F1]" /></div>
+                            </div>
+
+
+
+                            <div className="flex items-center justify-between">
+                                <h2 className="text-[16px] font-bold">{cards[currentCard].title}</h2>
+                                <p className="text-[15px] text-gray-600">{cards[currentCard].author}</p>
+                            </div>
+                            <p className="text-[15px] text-gray-600 mt-2">{cards[currentCard].description}</p>
                         </motion.div>
                     </AnimatePresence>
                 </div>
