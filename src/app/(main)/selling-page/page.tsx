@@ -1,5 +1,6 @@
 "use client";
 import Carousel from "@/components/Cerocel";
+import PaymentPage from "@/components/Payment";
 import { Heebo } from "next/font/google";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
@@ -74,7 +75,7 @@ const DiscountSection = () => {
                 )}
                 <div className="flex justify-center items-center bg-gray-100">
                     <button className="px-[35px] py-[14px] bg-blue-500 text-white text-[16px] font-semibold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300 zoom-fly-button">
-                        GET MY PLAN
+                    <PaymentPage/>
                     </button>
                 </div>
             </div>
@@ -289,8 +290,9 @@ const DiscountSection = () => {
 
                 <div className="flex sm:w-full w-[80%] mx-auto justify-center items-center py-4 z-0">
                     <button className="px-[35px] py-[14px] w-full  bg-blue-500 text-white text-[16px] font-semibold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300 zoom-fly-button">
-                        GET MY PLAN
+                    <PaymentPage/>
                     </button>
+                    
                 </div>
 
                 <div className="text-center flex flex-col justify-center items-center gap-5">
